@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "ec9eec67-6ebf-4a0a-80b4-ca9f71f1b781",
+		"name": "FintechProjectApitest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32064124"
+	},
+	"item": [
+		{
+			"name": "bank_a_load_testing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/bank/load-test?requests=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bank",
+						"load-test"
+					],
+					"query": [
+						{
+							"key": "requests",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bank_a_load_testing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "POST http://localhost:8082/POST/bank/load-test",
+					"protocol": "POST http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"POST",
+						"bank",
+						"load-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<TransactionRequest>\r\n    <TrxId>TRX-20260101-0000043</TrxId>\r\n    <BankId>BANK_A</BankId>\r\n    <CustomerId>892345</CustomerId>\r\n    <FromAccount>1234567890</FromAccount>\r\n    <ToAccount>9876543210</ToAccount>\r\n    <Amount>1250.75</Amount>\r\n    <Currency>INR</Currency>\r\n    <Timestamp>2026-01-01T12:55:00+05:30</Timestamp>\r\n</TransactionRequest>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/server/transaction/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"server",
+						"transaction",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
